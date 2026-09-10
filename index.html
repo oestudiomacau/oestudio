@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="澳易科技研發工作室 / OE STUDIO，公司介紹與產品服務。">
+  <title>OE STUDIO｜把想法，做成體驗</title>
+  <style>
+    :root {
+      --ink: #f5f5f2;
+      --muted: #a1a19c;
+      --line: rgba(255,255,255,.14);
+      --panel: #171716;
+      --panel-soft: #20201f;
+      --accent: #d8ff59;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #0a0a09;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .wrap { width: min(calc(100% - 48px), var(--max)); margin: 0 auto; }
+
+    .topbar {
+      position: fixed; inset: 0 0 auto; z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(10,10,9,.84);
+      backdrop-filter: blur(18px);
+    }
+    .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .13em; }
+    .brand-mark { width: 28px; height: 28px; display: grid; place-items: center; background: var(--ink); color: #0a0a09; font-size: 12px; }
+    .nav-links { display: flex; align-items: center; gap: 34px; color: var(--muted); font-size: 13px; }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
+    .nav-contact { color: var(--ink) !important; border-bottom: 1px solid var(--accent); padding-bottom: 3px; }
+    .menu-button { display: none; border: 0; color: var(--ink); background: transparent; font: inherit; font-size: 13px; }
+
+    .hero { min-height: 740px; padding: 190px 0 80px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 7vw; align-items: end; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; color: var(--accent); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { max-width: 720px; font-size: clamp(3.6rem, 8.5vw, 7.7rem); line-height: .96; font-weight: 600; letter-spacing: 0; }
+    .hero-copy { max-width: 350px; margin-top: 34px; color: var(--muted); font-size: 17px; }
+    .hero-actions { display: flex; gap: 22px; align-items: center; margin-top: 36px; }
+    .button { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--ink); padding: 12px 17px; font-size: 13px; transition: background .2s, color .2s, transform .2s; }
+    .button:hover, .button:focus-visible { color: #0a0a09; background: var(--ink); transform: translateY(-2px); }
+    .button-quiet { color: var(--muted); border-color: transparent; padding-left: 0; }
+    .button-quiet:hover, .button-quiet:focus-visible { color: var(--ink); background: transparent; transform: none; }
+    .hero-visual { position: relative; min-height: 430px; overflow: hidden; background: #1b1b1a; }
+    .hero-visual img { height: 100%; min-height: 430px; object-fit: cover; filter: grayscale(100%) contrast(1.08); }
+    .hero-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,.2), rgba(0,0,0,.52)); }
+    .visual-note { position: absolute; z-index: 1; right: 18px; bottom: 16px; color: rgba(255,255,255,.72); font-size: 11px; letter-spacing: .1em; }
+
+    .intro { padding: 120px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .intro-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 7vw; }
+    .section-kicker { color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .intro h2 { max-width: 760px; font-size: clamp(2.4rem, 5vw, 5.2rem); line-height: 1.05; font-weight: 500; letter-spacing: 0; }
+    .intro h2 em { color: var(--accent); font-style: normal; }
+
+    .services { padding: 120px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 48px; }
+    .section-head h2 { font-size: clamp(2.3rem, 4vw, 4rem); line-height: 1; font-weight: 500; letter-spacing: 0; }
+    .section-head p { max-width: 315px; color: var(--muted); font-size: 14px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+    .service { min-height: 280px; padding: 28px 26px 30px 0; border-bottom: 1px solid var(--line); }
+    .service + .service { padding-left: 26px; border-left: 1px solid var(--line); }
+    .service-number { color: var(--accent); font-size: 12px; }
+    .service h3 { margin-top: 58px; font-size: 23px; font-weight: 500; }
+    .service p { margin-top: 12px; max-width: 270px; color: var(--muted); font-size: 14px; }
+
+    .feature { padding: 0 0 120px; }
+    .feature-grid { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 570px; background: var(--panel); }
+    .feature-image { min-height: 480px; overflow: hidden; }
+    .feature-image img { height: 100%; object-fit: cover; filter: grayscale(100%); transition: transform .6s ease; }
+    .feature:hover .feature-image img { transform: scale(1.035); }
+    .feature-content { display: flex; flex-direction: column; justify-content: space-between; padding: 42px; }
+    .feature-content .section-kicker { color: var(--accent); }
+    .feature h2 { margin-top: 24px; font-size: clamp(2.2rem, 4vw, 4.4rem); line-height: 1; font-weight: 500; letter-spacing: 0; }
+    .feature-copy { max-width: 330px; color: var(--muted); font-size: 14px; }
+    .feature-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .feature-meta strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: 14px; font-weight: 500; }
+
+    .process { padding: 0 0 120px; }
+    .process-list { border-top: 1px solid var(--line); }
+    .process-item { display: grid; grid-template-columns: 110px 1fr 1fr; gap: 30px; align-items: center; padding: 26px 0; border-bottom: 1px solid var(--line); }
+    .process-item .number { color: var(--accent); font-size: 13px; }
+    .process-item h3 { font-size: 21px; font-weight: 500; }
+    .process-item p { color: var(--muted); font-size: 14px; }
+
+    .cta { margin-bottom: 24px; padding: 90px 0 96px; background: var(--accent); color: #0a0a09; }
+    .cta-inner { display: flex; align-items: end; justify-content: space-between; gap: 34px; }
+    .cta h2 { max-width: 690px; font-size: clamp(2.7rem, 6vw, 6.4rem); line-height: .98; font-weight: 600; letter-spacing: 0; }
+    .cta .button { border-color: #0a0a09; color: #0a0a09; }
+    .cta .button:hover, .cta .button:focus-visible { color: var(--accent); background: #0a0a09; }
+    footer { padding: 34px 0 44px; color: var(--muted); font-size: 12px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a:hover, .footer-links a:focus-visible { color: var(--ink); }
+
+    @media (max-width: 800px) {
+      .wrap { width: min(calc(100% - 36px), var(--max)); }
+      .nav { height: 68px; }
+      .menu-button { display: block; cursor: pointer; }
+      .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; padding: 18px; flex-direction: column; align-items: flex-start; gap: 14px; border-bottom: 1px solid var(--line); background: rgba(10,10,9,.96); }
+      .nav-links.is-open { display: flex; }
+      .hero { min-height: auto; padding: 140px 0 72px; grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual, .hero-visual img { min-height: 360px; }
+      .intro, .services { padding: 80px 0; }
+      .intro-grid, .feature-grid { grid-template-columns: 1fr; gap: 28px; }
+      .intro-grid { gap: 24px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service, .service + .service { min-height: auto; padding: 24px 0; border-left: 0; }
+      .service h3 { margin-top: 34px; }
+      .feature { padding-bottom: 80px; }
+      .feature-image { min-height: 320px; }
+      .feature-content { min-height: 430px; padding: 30px 24px; }
+      .process { padding-bottom: 80px; }
+      .process-item { grid-template-columns: 50px 1fr; gap: 8px 18px; }
+      .process-item p { grid-column: 2; }
+      .cta { padding: 70px 0; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="澳易科技研發工作室 OE STUDIO 首頁"><span class="brand-mark">OE</span><span>OE STUDIO</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">選單</button>
+      <nav id="main-nav" class="nav-links" aria-label="主要導覽">
+        <a href="#about">關於我們</a>
+        <a href="#services">產品服務</a>
+        <a href="#work">精選案例</a>
+        <a class="nav-contact" href="#contact">開始合作 ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">澳易科技研發工作室 / OE STUDIO</p>
+        <h1 id="hero-title">把想法，<br>做成體驗。</h1>
+        <p class="hero-copy">澳易科技研發工作室，專注於 AI 服務定制與展會遊戲裝置定制，讓技術真正被看見、被使用，也被記住。</p>
+        <div class="hero-actions">
+          <a class="button" href="#work">看精選案例 <span aria-hidden="true">↘</span></a>
+          <a class="button button-quiet" href="#about">認識 OE STUDIO <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=85" alt="夜色中的山脈與光線" fetchpriority="high">
+        <span class="visual-note">OE STUDIO / MACAU · ZHUHAI</span>
+      </div>
+    </section>
+
+    <section id="about" class="intro">
+      <div class="wrap intro-grid">
+        <p class="section-kicker">01 / About</p>
+        <h2>好的技術，不只運作。<br>它讓每一次互動都變得<em>自然、難忘。</em></h2>
+      </div>
+    </section>
+
+    <section id="services" class="wrap services">
+      <div class="section-head">
+        <h2>我們能一起<br>完成什麼</h2>
+        <p>從第一個想法到現場真正運作，我們用 AI、互動設計與軟硬體整合，讓每個體驗都更簡單、更有記憶點。</p>
+      </div>
+      <div class="service-grid">
+        <article class="service">
+          <span class="service-number">01</span>
+          <h3>AI 服務定制</h3>
+          <p>從概念驗證到實際導入，打造符合團隊流程的 AI 工具與服務。</p>
+        </article>
+        <article class="service">
+          <span class="service-number">02</span>
+          <h3>展會遊戲裝置</h3>
+          <p>結合互動設計、硬體與內容，為展會打造吸引目光、好玩且好記的遊戲裝置。</p>
+        </article>
+        <article class="service">
+          <span class="service-number">03</span>
+          <h3>整合與技術支援</h3>
+          <p>整合軟硬體、現場部署與持續優化，讓每一次互動穩定發生。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="work" class="wrap feature" aria-labelledby="feature-title">
+      <div class="feature-grid">
+        <div class="feature-image">
+          <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1400&q=85" alt="桌面上的產品設計草圖與筆記" loading="lazy">
+        </div>
+        <div class="feature-content">
+          <div>
+            <p class="section-kicker">02 / Selected work</p>
+            <h2 id="feature-title">Spark<br>互動展會裝置</h2>
+            <p class="feature-copy" style="margin-top: 28px;">以 AI 互動導覽結合遊戲機制，為品牌展位創造一個讓人主動靠近、願意停留的體驗入口。</p>
+          </div>
+          <div>
+            <div class="feature-meta">
+              <span><strong>服務內容</strong>AI / 互動裝置 / 整合</span>
+              <span><strong>合作年份</strong>2025 — 2026</span>
+            </div>
+            <a class="button button-quiet" href="#contact" style="margin-top: 24px; color: var(--ink);">查看完整案例 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap process" aria-labelledby="process-title">
+      <div class="section-head">
+        <h2 id="process-title">一起工作的<br>方式</h2>
+        <p>保持開放、保持清楚。每個階段都讓你看見進度，也保留足夠空間給好點子發生。</p>
+      </div>
+      <div class="process-list">
+        <div class="process-item"><span class="number">01</span><h3>對齊問題</h3><p>理解你的目標、限制與真正想解決的事。</p></div>
+        <div class="process-item"><span class="number">02</span><h3>提出方向</h3><p>把研究整理成可討論、可選擇的清楚方案。</p></div>
+        <div class="process-item"><span class="number">03</span><h3>一起完成</h3><p>快速驗證、持續打磨，直到它在真實世界裡成立。</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="wrap cta-inner">
+        <h2>有件重要的事，<br>想一起做嗎？</h2>
+        <a class="button" href="mailto:hello@oe-studio.com">hello@oe-studio.com <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2025 澳易科技研發工作室 / OE STUDIO · 澳門・珠海</span>
+      <div class="footer-links"><a href="#top">回到頂端 ↑</a><a href="mailto:hello@oe-studio.com">Email</a><a href="#">Instagram</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const nav = document.querySelector('#main-nav');
+    menuButton.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
+</body>
+</html>
