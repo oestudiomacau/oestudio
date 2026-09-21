@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
   <meta name="description" content="澳易科技研發工作室 / OE STUDIO，公司介紹與產品服務。">
   <title>OE STUDIO｜把想法，做成體驗</title>
   <style>
@@ -14,10 +15,29 @@
       --panel-soft: #20201f;
       --accent: #d8ff59;
       --max: 1180px;
+=======
+  <meta name="description" content="澳易科技研發工作室 / OE STUDIO：AI 服務定制與展會遊戲裝置定制。">
+  <title>OE STUDIO｜把技術做成體驗</title>
+  <style>
+    :root {
+      --white: #ffffff;
+      --mist: #f5f5f7;
+      --frost: #fafafc;
+      --line: #d6d6d6;
+      --control: #e6e6e8;
+      --ink: #1d1d1f;
+      --slate: #707070;
+      --steel: #86868b;
+      --blue: #0066cc;
+      --pricing: #0071e3;
+      --orange: #b64400;
+      --content: 1180px;
+>>>>>>> 21360d7 (Add OE Studio website and case galleries)
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+<<<<<<< HEAD
     body {
       margin: 0;
       color: var(--ink);
@@ -130,11 +150,159 @@
       .process-item p { grid-column: 2; }
       .cta { padding: 70px 0; }
       .cta-inner { align-items: flex-start; flex-direction: column; }
+=======
+    body { margin: 0; color: var(--ink); background: var(--white); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "PingFang SC", "PingFang TC", "Noto Sans CJK SC", "Noto Sans CJK TC", Arial, sans-serif; font-size: 17px; line-height: 1.47; letter-spacing: 0; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(calc(100% - 48px), var(--content)); margin: 0 auto; }
+
+    .global-nav { height: 44px; border-bottom: 1px solid var(--control); background: rgba(255,255,255,.96); }
+    .global-nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .wordmark { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
+    .mark { width: 19px; height: 19px; display: grid; place-items: center; border-radius: 6px; color: var(--white); background: var(--ink); font-size: 8px; font-weight: 600; }
+    .global-links { display: flex; align-items: center; gap: 26px; color: var(--slate); font-size: 12px; }
+    .global-links a:hover, .global-links a:focus-visible { color: var(--ink); }
+    .menu-button { display: none; border: 0; color: var(--ink); background: transparent; cursor: pointer; }
+    .mobile-links { display: none; }
+
+    .local-nav { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--control); background: rgba(250,250,252,.92); backdrop-filter: blur(20px); }
+    .local-nav-inner { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .local-title { font-size: 19px; font-weight: 600; }
+    .local-actions { display: flex; align-items: center; gap: 12px; }
+    .outline-pill, .blue-pill { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; padding: 7px 15px; border-radius: 9999px; font-size: 12px; line-height: 1.33; white-space: nowrap; }
+    .outline-pill { border: 1px solid var(--steel); color: var(--ink); background: transparent; }
+    .blue-pill { border: 0; color: var(--white); background: var(--pricing); }
+    .outline-pill:hover, .outline-pill:focus-visible { background: var(--control); }
+    .blue-pill:hover, .blue-pill:focus-visible { background: var(--blue); }
+
+    .hero { min-height: 760px; padding: 92px 0 72px; text-align: center; background: var(--white); }
+    .launch-label { color: var(--orange); font-size: 12px; font-weight: 600; }
+    .hero h1 { margin: 14px auto 0; font-size: 80px; font-weight: 600; line-height: 1.05; }
+    .hero-subtitle { max-width: 630px; margin: 20px auto 0; color: var(--slate); font-size: 20px; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px; margin-top: 24px; }
+    .text-link { color: var(--blue); font-size: 17px; }
+    .text-link:hover, .text-link:focus-visible { text-decoration: underline; }
+    .product-stage { position: relative; min-height: 360px; margin: 46px auto 0; display: grid; place-items: center; overflow: hidden; }
+    .product-shadow { position: absolute; bottom: 35px; width: 420px; height: 26px; border-radius: 50%; background: #e6e6e8; }
+    .hero-product-image { position: relative; z-index: 1; display: block; width: min(820px, 92vw); max-height: 350px; object-fit: contain; object-position: center; transition: transform .45s ease; }
+    .hero-product-image:hover { transform: scale(1.025); }
+    .device { position: relative; z-index: 1; width: 380px; height: 220px; display: flex; align-items: stretch; justify-content: center; transform: perspective(1000px) rotateX(5deg) rotateY(-10deg); transition: transform .5s ease; }
+    .device.is-open { transform: perspective(1000px) rotateX(4deg) rotateY(0deg) scale(1.04); }
+    .device-panel { position: relative; width: 184px; padding: 9px; border: 1px solid #b8b8bd; background: #e9e9ed; }
+    .device-panel.left { border-radius: 20px 5px 5px 20px; transform: skewY(1deg); }
+    .device-panel.right { border-radius: 5px 20px 20px 5px; transform: skewY(-1deg); }
+    .device-screen { position: relative; height: 100%; overflow: hidden; border-radius: 14px; background: var(--ink); }
+    .device-screen::before { content: "OE"; position: absolute; left: 18px; top: 16px; color: var(--white); font-size: 12px; font-weight: 600; }
+    .device-screen::after { content: "AI / PLAY / CONNECT"; position: absolute; left: 18px; bottom: 18px; color: #d6d6d6; font-size: 9px; letter-spacing: .04em; }
+    .device-screen .screen-orb { position: absolute; top: 45%; left: 50%; width: 62px; height: 62px; border: 1px solid var(--pricing); border-radius: 50%; transform: translate(-50%, -50%); }
+    .device-screen .screen-orb::before, .device-screen .screen-orb::after { content: ""; position: absolute; border: 1px solid var(--pricing); border-radius: 50%; }
+    .device-screen .screen-orb::before { inset: 9px; }
+    .device-screen .screen-orb::after { inset: 20px; border-color: var(--white); }
+    .device-hinge { width: 12px; margin: 11px -1px; border: 1px solid #aaaab0; background: #d0d0d4; }
+    .device-caption { position: absolute; right: 14%; bottom: 25px; color: var(--steel); font-size: 12px; }
+
+    .anchor-nav { border-top: 1px solid var(--control); border-bottom: 1px solid var(--control); background: var(--white); }
+    .anchor-list { display: flex; justify-content: center; gap: 34px; padding: 25px 0; color: var(--ink); font-size: 17px; }
+    .anchor-list a:hover, .anchor-list a:focus-visible { color: var(--blue); }
+
+    .mist-band { padding: 90px 0 104px; background: var(--mist); }
+    .band-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 40px; }
+    .band-heading h2, .editorial h2 { margin: 0; font-size: 48px; font-weight: 600; line-height: 1.08; }
+    .band-heading p { max-width: 390px; color: var(--slate); font-size: 17px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .feature-card { min-height: 360px; display: flex; flex-direction: column; justify-content: space-between; padding: 28px; border-radius: 28px; background: var(--white); }
+    .feature-index { color: var(--steel); font-size: 12px; }
+    .feature-card h3 { margin-top: 80px; font-size: 28px; font-weight: 600; line-height: 1.1; }
+    .feature-card p { margin-top: 14px; color: var(--slate); font-size: 15px; }
+    .feature-icon { width: 74px; height: 74px; position: relative; border: 1px solid var(--ink); border-radius: 22px; }
+    .feature-icon::before, .feature-icon::after { content: ""; position: absolute; border: 1px solid var(--blue); }
+    .feature-icon::before { inset: 17px; border-radius: 50%; }
+    .feature-icon::after { left: 50%; top: 9px; bottom: 9px; width: 1px; background: var(--blue); border: 0; transform: rotate(35deg); }
+
+    .editorial { padding: 120px 0; background: var(--white); }
+    .editorial-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 10vw; align-items: center; }
+    .editorial h2 { margin-top: 18px; font-size: 64px; }
+    .editorial-copy { max-width: 390px; margin-top: 24px; color: var(--slate); }
+    .editorial-visual { min-height: 420px; position: relative; display: grid; place-items: center; border-radius: 28px; background: var(--mist); overflow: hidden; }
+    .case-gallery { position: absolute; inset: 0; display: flex; touch-action: pan-y; cursor: grab; user-select: none; }
+    .case-gallery.is-dragging { cursor: grabbing; }
+    .case-slide { position: relative; flex: 0 0 100%; min-width: 100%; height: 100%; }
+    .case-slide img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; pointer-events: none; }
+    .case-gallery::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,.08), transparent 24%, transparent 72%, rgba(0,0,0,.28)); }
+    .gallery-control { position: absolute; z-index: 2; top: 50%; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; background: rgba(29,29,31,.5); color: var(--white); font-size: 28px; line-height: 1; transform: translateY(-50%); opacity: 0; transition: opacity .2s ease, background .2s ease; }
+    .editorial-visual:hover .gallery-control, .editorial-visual:focus-within .gallery-control { opacity: 1; }
+    .gallery-control:hover, .gallery-control:focus-visible { background: rgba(29,29,31,.86); }
+    .gallery-control.prev { left: 18px; }
+    .gallery-control.next { right: 18px; }
+    .gallery-dots { position: absolute; z-index: 3; left: 50%; bottom: 18px; display: flex; gap: 8px; transform: translateX(-50%); }
+    .gallery-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.62); cursor: pointer; }
+    .gallery-dot.is-active { background: var(--white); transform: scale(1.25); }
+    .terminal { width: 290px; height: 340px; position: relative; padding: 10px; border: 1px solid #c3c3c7; border-radius: 26px; background: #e9e9ed; transform: rotate(8deg); }
+    .terminal-screen { height: 100%; position: relative; border-radius: 19px; background: #1d1d1f; }
+    .terminal-screen::before { content: "LIVE / 04"; position: absolute; top: 22px; left: 22px; color: #d6d6d6; font-size: 11px; }
+    .terminal-screen::after { content: "觸發互動\A\A 讓每一次參與\A 都有回應。"; white-space: pre; position: absolute; left: 22px; bottom: 24px; color: var(--white); font-size: 24px; line-height: 1.18; }
+    .editorial-visual .blue-dot { position: absolute; width: 22px; height: 22px; border-radius: 50%; background: var(--pricing); }
+    .editorial-visual .blue-dot.one { top: 18%; left: 22%; }
+    .editorial-visual .blue-dot.two { right: 18%; bottom: 20%; background: var(--orange); }
+    .editorial-product-image { position: relative; z-index: 1; display: block; width: 88%; max-height: 360px; object-fit: contain; }
+
+    .steps { padding: 0 0 120px; background: var(--white); }
+    .steps-header { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 42px; }
+    .steps-header p { max-width: 400px; color: var(--slate); }
+    .step-list { max-width: 900px; margin: 0 auto; }
+    .step { display: grid; grid-template-columns: 60px 1fr 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--line); }
+    .step:last-child { border-bottom: 1px solid var(--line); }
+    .step-number { color: var(--blue); font-size: 13px; }
+    .step h3 { font-size: 24px; font-weight: 600; }
+    .step p { color: var(--slate); font-size: 15px; }
+
+    .contact { padding: 112px 0 128px; text-align: center; background: var(--mist); }
+    .contact h2 { margin: 14px auto 0; font-size: 64px; font-weight: 600; line-height: 1.08; }
+    .contact p { max-width: 440px; margin: 22px auto 0; color: var(--slate); }
+    .contact .blue-pill { margin-top: 26px; min-height: 40px; padding-inline: 20px; }
+    footer { padding: 30px 0 44px; color: var(--slate); background: var(--mist); font-size: 12px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a:hover, .footer-links a:focus-visible { color: var(--ink); }
+
+    @media (max-width: 800px) {
+      .wrap { width: min(calc(100% - 36px), var(--content)); }
+      .global-links { display: none; }
+      .menu-button { display: block; }
+      .mobile-links[hidden] { display: none; }
+      .mobile-links:not([hidden]) { display: block; padding: 16px 0; border-bottom: 1px solid var(--control); background: var(--frost); }
+      .mobile-links .wrap { display: flex; gap: 22px; overflow-x: auto; white-space: nowrap; color: var(--slate); font-size: 14px; }
+      .local-nav-inner { min-height: 54px; }
+      .local-actions { gap: 8px; }
+      .hero { min-height: 700px; padding-top: 64px; }
+      .hero h1 { font-size: 48px; }
+      .hero-subtitle { font-size: 17px; }
+      .product-stage { min-height: 300px; margin-top: 28px; }
+      .device-caption { right: 3%; bottom: 12px; }
+      .hero-product-image { width: 104%; max-height: 270px; }
+      .anchor-list { justify-content: flex-start; gap: 22px; overflow-x: auto; white-space: nowrap; font-size: 15px; }
+      .mist-band { padding: 64px 0 76px; }
+      .band-heading, .steps-header { align-items: flex-start; flex-direction: column; }
+      .band-heading h2, .editorial h2 { font-size: 40px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .feature-card { min-height: 290px; }
+      .feature-card h3 { margin-top: 44px; }
+      .editorial { padding: 82px 0; }
+      .editorial-grid { grid-template-columns: 1fr; gap: 42px; }
+      .editorial-visual { min-height: 360px; }
+      .gallery-control { opacity: 1; width: 38px; height: 38px; }
+      .steps { padding-bottom: 84px; }
+      .step { grid-template-columns: 42px 1fr; gap: 8px 14px; }
+      .step p { grid-column: 2; }
+      .contact { padding: 78px 0 86px; }
+      .contact h2 { font-size: 44px; }
+>>>>>>> 21360d7 (Add OE Studio website and case galleries)
       .footer-row { align-items: flex-start; flex-direction: column; }
     }
   </style>
 </head>
 <body>
+<<<<<<< HEAD
   <header class="topbar">
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="澳易科技研發工作室 OE STUDIO 首頁"><span class="brand-mark">OE</span><span>OE STUDIO</span></a>
@@ -256,6 +424,51 @@
       nav.classList.remove('is-open');
       menuButton.setAttribute('aria-expanded', 'false');
     }));
+=======
+  <nav class="global-nav"><div class="wrap global-nav-inner"><a class="wordmark" href="#top"><span class="mark">OE</span><span>OE STUDIO</span></a><div class="global-links"><a href="#about">關於</a><a href="#services">服務</a><a href="#work">作品</a><a href="#contact">聯絡</a></div><button class="menu-button" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-links">選單</button></div></nav>
+  <div id="mobile-links" class="mobile-links" hidden><div class="wrap"><a href="#about">關於</a><a href="#services">服務</a><a href="#work">作品</a><a href="#contact">聯絡</a></div></div>
+  <nav class="local-nav"><div class="wrap local-nav-inner"><span class="local-title">澳易科技研發工作室</span><div class="local-actions"><a class="outline-pill" href="#services">探索服務</a><a class="blue-pill" href="#contact">開始合作</a></div></div></nav>
+
+  <main id="top">
+    <section class="hero"><p class="launch-label">澳門 · 珠海　/　AI 與互動科技</p><h1>把技術做成<br>可感知的體驗。</h1><p class="hero-subtitle">AI 服務定制、展會遊戲裝置定制，為品牌與團隊做出真正被使用、被記住的作品。</p><div class="hero-actions"><a class="blue-pill" href="#contact">了解 OE STUDIO ↗</a><a class="text-link" href="#work">查看精選案例 →</a></div><div class="product-stage"><div class="product-shadow"></div><img class="hero-product-image" src="assets/rcb-game-cutout.png" alt="RCB Game Virtual Racing 展會遊戲裝置"><span class="device-caption">RCB GAME / VIRTUAL RACING</span></div></section>
+    <nav class="anchor-nav" aria-label="頁面章節"><div class="wrap anchor-list"><a href="#about">我們相信</a><a href="#services">服務內容</a><a href="#work">精選案例</a><a href="#process">合作方式</a></div></nav>
+
+    <section id="about" class="mist-band"><div class="wrap band-heading"><h2>複雜的事，<br>也可以很直覺。</h2><p>我們把技術、內容與現場環境放在一起，讓每個想法都能被理解、被參與、被記住。</p></div></section>
+    <section id="services" class="mist-band" style="padding-top:0;"><div class="wrap feature-grid"><article class="feature-card"><div><span class="feature-index">01 / AI SERVICES</span><div class="feature-icon" style="margin-top:28px;"></div><h3>AI 服務定制</h3><p>為流程、客服、內容與內部工具打造專屬 AI 方案。</p></div><a class="text-link" href="#contact">了解更多 →</a></article><article class="feature-card"><div><span class="feature-index">02 / EXHIBITION</span><div class="feature-icon" style="margin-top:28px;"></div><h3>展會遊戲裝置</h3><p>結合感測器、螢幕、燈光與遊戲機制，讓觀眾主動靠近。</p></div><a class="text-link" href="#contact">了解更多 →</a></article><article class="feature-card"><div><span class="feature-index">03 / INTEGRATION</span><div class="feature-icon" style="margin-top:28px;"></div><h3>軟硬體整合</h3><p>從原型、測試到現場部署與維護，確保體驗穩定發生。</p></div><a class="text-link" href="#contact">了解更多 →</a></article></div></section>
+
+    <section id="work" class="editorial"><div class="wrap editorial-grid"><div><p class="launch-label">精選案例 / 01</p><h2>刹车套件<br>游戏互动装置。</h2><p class="editorial-copy">将刹车套件的真实操控手感与赛道挑战结合，让观众在加速、转向与刹车的每一次操作中，直观感受产品的响应、稳定与性能优势。</p><a class="text-link" href="#contact" style="display:inline-block;margin-top:24px;">讨论你的展会 →</a></div><div class="editorial-visual case-gallery-shell" aria-label="RCB Game Virtual Racing 展會案例相冊"><div class="case-gallery" data-gallery><div class="case-slide"><img src="assets/gallery/rcb-expo-00.jpg" alt="RCB 刹车套件游戏互动装置特写"></div><div class="case-slide"><img src="assets/gallery/rcb-expo-01.jpg" alt="RCB Game Virtual Racing 展會現場，觀眾體驗裝置"></div><div class="case-slide"><img src="assets/gallery/rcb-expo-02.jpg" alt="RCB Game Virtual Racing 展會現場，兒童體驗裝置"></div><div class="case-slide"><img src="assets/gallery/rcb-expo-03.jpg" alt="RCB Game Virtual Racing 展會現場，親子互動體驗"></div></div><button class="gallery-control prev" type="button" aria-label="上一張案例照片" title="上一張">‹</button><button class="gallery-control next" type="button" aria-label="下一張案例照片" title="下一張">›</button><div class="gallery-dots" role="tablist" aria-label="案例照片選擇"><button class="gallery-dot is-active" type="button" role="tab" aria-label="第 1 張照片" aria-selected="true"></button><button class="gallery-dot" type="button" role="tab" aria-label="第 2 張照片" aria-selected="false"></button><button class="gallery-dot" type="button" role="tab" aria-label="第 3 張照片" aria-selected="false"></button><button class="gallery-dot" type="button" role="tab" aria-label="第 4 張照片" aria-selected="false"></button></div></div></div></section>
+    <section class="editorial" style="padding-top:0;"><div class="wrap editorial-grid"><div class="editorial-visual case-gallery-shell" aria-label="RCB 抽奖互动游戏终端案例相册"><div class="case-gallery" data-gallery><div class="case-slide"><img src="assets/gallery/rcb-lucky-01.jpg" alt="RCB 观众体验抽奖互动游戏终端"></div><div class="case-slide"><img src="assets/gallery/rcb-lucky-02.jpg" alt="RCB 展位抽奖互动游戏终端与观众"></div><div class="case-slide"><img src="assets/gallery/rcb-lucky-03.jpg" alt="RCB 展位抽奖互动游戏终端现场"></div></div><button class="gallery-control prev" type="button" aria-label="上一张案例照片" title="上一张">‹</button><button class="gallery-control next" type="button" aria-label="下一张案例照片" title="下一張">›</button><div class="gallery-dots" role="tablist" aria-label="案例照片選擇"><button class="gallery-dot is-active" type="button" role="tab" aria-label="第 1 張照片" aria-selected="true"></button><button class="gallery-dot" type="button" role="tab" aria-label="第 2 張照片" aria-selected="false"></button><button class="gallery-dot" type="button" role="tab" aria-label="第 3 張照片" aria-selected="false"></button></div></div><div><p class="launch-label">精選案例 / 02</p><h2>抽奖互动<br>游戏终端。</h2><p class="editorial-copy">将产品信息融入触控闯关与抽奖机制，让观众在完成任务的过程中主动认识产品亮点，并以即时奖励带动停留、参与和分享。</p><a class="text-link" href="#contact" style="display:inline-block;margin-top:24px;">讨论你的展会 →</a></div></div></section>
+
+    <section id="process" class="steps"><div class="wrap steps-header"><h2 class="band-heading" style="margin:0;display:block;"><span style="display:block;font-size:48px;font-weight:600;line-height:1.08;">一起把事情<br>做對。</span></h2><p>從第一個問題到現場落地，每一步都保持清楚、可驗證，也保留空間給好點子發生。</p></div><div class="wrap step-list"><div class="step"><span class="step-number">01</span><h3>理解問題</h3><p>對齊目標、場景與限制，找出真正需要被解決的事。</p></div><div class="step"><span class="step-number">02</span><h3>做出原型</h3><p>把抽象想法變成可討論、可操作、可快速驗證的體驗。</p></div><div class="step"><span class="step-number">03</span><h3>落到現場</h3><p>持續測試與打磨，直到它在真實使用者面前自然發生。</p></div></div></section>
+    <section id="contact" class="contact"><p class="launch-label">澳門 · 珠海　/　開始對話</p><h2>有件重要的事，<br>想一起做嗎？</h2><p>告訴我們你的想法、場景或一個還沒成形的問題，我們會從那裡開始。</p><a class="blue-pill" href="mailto:hello@oe-studio.com">hello@oe-studio.com ↗</a></section>
+  </main>
+  <footer><div class="wrap footer-row"><span>© 2025 澳易科技研發工作室 / OE STUDIO · 澳門・珠海</span><div class="footer-links"><a href="#top">回到頂端 ↑</a><a href="mailto:hello@oe-studio.com">Email</a><a href="#">Instagram</a></div></div></footer>
+  <script>
+    const menuButton=document.querySelector('.menu-button'); const mobileLinks=document.querySelector('#mobile-links');
+    menuButton.addEventListener('click',()=>{const open=mobileLinks.hidden; mobileLinks.hidden=!open; menuButton.setAttribute('aria-expanded',String(open));});
+
+    document.querySelectorAll('[data-gallery]').forEach((gallery)=>{
+      const shell=gallery.closest('.case-gallery-shell');
+      const slides=[...gallery.querySelectorAll('.case-slide')];
+      const dots=[...shell.querySelectorAll('.gallery-dot')];
+      const prev=shell.querySelector('.gallery-control.prev');
+      const next=shell.querySelector('.gallery-control.next');
+      let current=0; let startX=0; let deltaX=0; let dragging=false;
+      const render=()=>{
+        gallery.style.transform=`translate3d(${-current*100}%,0,0)`;
+        dots.forEach((dot,index)=>{const active=index===current; dot.classList.toggle('is-active',active); dot.setAttribute('aria-selected',String(active));});
+      };
+      const move=(step)=>{current=(current+step+slides.length)%slides.length; render();};
+      prev.addEventListener('click',()=>move(-1)); next.addEventListener('click',()=>move(1));
+      dots.forEach((dot,index)=>dot.addEventListener('click',()=>{current=index; render();}));
+      gallery.addEventListener('pointerdown',(event)=>{dragging=true; startX=event.clientX; deltaX=0; gallery.classList.add('is-dragging'); gallery.setPointerCapture(event.pointerId);});
+      gallery.addEventListener('pointermove',(event)=>{if(dragging) deltaX=event.clientX-startX;});
+      gallery.addEventListener('pointerup',(event)=>{if(!dragging)return; dragging=false; gallery.classList.remove('is-dragging'); gallery.releasePointerCapture(event.pointerId); if(Math.abs(deltaX)>48) move(deltaX<0?1:-1);});
+      gallery.addEventListener('pointercancel',()=>{dragging=false; gallery.classList.remove('is-dragging');});
+      gallery.addEventListener('keydown',(event)=>{if(event.key==='ArrowLeft')move(-1); if(event.key==='ArrowRight')move(1);});
+      gallery.tabIndex=0; render();
+    });
+>>>>>>> 21360d7 (Add OE Studio website and case galleries)
   </script>
 </body>
 </html>
